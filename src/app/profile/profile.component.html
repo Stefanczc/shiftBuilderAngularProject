@@ -1,0 +1,26 @@
+<button (click)="navigateToHomepage()" class="homepage-btn">
+    <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to Homepage</span>
+</button>
+<div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()" class="form">
+        <ul *ngIf="user" class="form_front">
+            <p class="form_details">My Profile</p>
+            <label for="">E-mail</label>
+            <li><input formControlName="email" class="input"></li>
+            <label for="">Password</label>
+            <li><input formControlName="password" class="input"></li>
+            <label for="">Firstname</label>
+            <li><input formControlName="firstname" class="input"></li>
+            <label for="">Lastname</label>
+            <li><input formControlName="lastname" class="input"></li>
+            <label for="">Birthdate</label>
+            <li><input type="date" formControlName="birthdate" class="input"></li>
+            <button type="submit" [disabled]="profileForm.invalid" class="btn">
+                <span>Edit</span>
+            </button>
+            <button type="button" class="btn" (click)="removeUser()">
+                <span>Delete account</span>
+            </button>
+        </ul>
+    </form>
+</div>

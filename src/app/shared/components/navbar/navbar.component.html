@@ -1,0 +1,21 @@
+<ul class="navbar-list" *ngIf="!(isLoginPage) && (this.user$ | async)?.role !== 'admin' && (isLoggedIn$ | async)">
+    <li><a><span (click)="navigateToHomepage()"><img src="../../assets/images/worker-miner-svgrepo-com.svg"
+                    alt="logo-img"></span></a></li>
+    <li><a (click)="navigateToMyShifts()">MY SHIFTS</a></li>
+    <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
+    <li><a (click)="navigateToProfilePage()">PROFILE</a></li>
+    <li><span>Hello {{ (user$ | async)?.firstname | uppercase }}.{{ (user$ | async)?.lastname?.slice(0, 2) | uppercase
+            }}</span></li>
+    <li><a (click)="logout()">LOG OUT</a></li>
+</ul>
+
+<ul class="navbar-list" *ngIf="!(isLoginPage) && (this.user$ | async)?.role === 'admin' && (isLoggedIn$ | async)">
+    <li><a><span (click)="navigateToAdminHomepage()"><img src="../../assets/images/worker-miner-svgrepo-com.svg"
+                    alt="logo-img"></span></a></li>
+    <li><a (click)="navigateToAllShifts()">SHIFTS</a></li>
+    <li><a (click)="navigateToAllWorkers()">WORKERS</a></li>
+    <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
+    <li class=" "><span>Hello {{ (user$ | async)?.firstname | uppercase }}</span>
+    </li>
+    <li><a (click)="logout()">LOG OUT</a></li>
+</ul>

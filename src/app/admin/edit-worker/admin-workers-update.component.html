@@ -1,0 +1,33 @@
+<button (click)="navigateToAllWorkers()" class="homepage-btn">
+    <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to All Workers</span>
+</button>
+
+<button *ngIf="user" (click)="navigateToMyShifts()" class="user-profile-shifts">
+    <span class="box">go to {{ user.firstname | uppercase }}'s shifts <img
+            src="../../../assets/images/arrow-go-forward-svgrepo-com.svg" alt="back-img"></span>
+</button>
+
+<div class="container">
+    <form [formGroup]="workerForm" (submit)="updateWorker()" class="form">
+        <div *ngIf="user" class="form_front">
+            <h2 *ngIf="user" class="form_details"> {{ user.firstname | uppercase }}'s Profile</h2>
+            <label for="">E-mail</label>
+            <input formControlName="email" class="input">
+            <label for="">Password</label>
+            <input formControlName="password" class="input">
+            <label for="">Firstname</label>
+            <input formControlName="firstname" class="input">
+            <label for="">Lastname</label>
+            <input formControlName="lastname" class="input">
+            <label for="">Birthdate</label>
+            <input type="date" formControlName="birthdate" class="input">
+            <button type="submit" [disabled]="workerForm.invalid" class="btn">
+                <span>Edit</span>
+            </button>
+            <button type="button" class="btn" (click)="removeWorker()">
+                <span>Delete account</span>
+            </button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    margin: 25px 0;
+    color: #6c63ff;
+}
+
+
+
+table {
+    white-space: nowrap;
+}
+::-webkit-scrollbar {
+    width: 1em;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-track {
+    background: var(--darkWhite);
+}
+
+

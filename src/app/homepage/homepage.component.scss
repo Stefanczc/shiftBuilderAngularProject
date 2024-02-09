@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    padding: 2em 0 1em;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+}
+b {
+    color: #6c63ff;
+}
+.shifts-container {
+    margin: 0 auto;
+    padding: 25px 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}

@@ -1,0 +1,9 @@
+<div class="alert-container">
+    <div *ngFor="let alert of alerts$ | async" class="alert"
+        [ngClass]="{ 'visible': alert.isVisible, 'success-alert': alert.title === 'Success', 'danger-alert': alert.title === 'Error' }">
+        <h3>{{ alert.title }}</h3>
+        <p>{{ alert.content }}</p>
+        <span class="close" (click)="closeAlert(alert)"><img
+                src="../../../../assets/images/close-square-svgrepo-com.svg" alt=""></span>
+    </div>
+</div>

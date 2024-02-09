@@ -1,0 +1,36 @@
+<div class="back-btn-container homepage-btn">
+    <button (click)="navigateBack()">
+        <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to My Shifts</span>
+    </button>
+</div>
+<div class="container">
+    <form [formGroup]="shiftForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="form_front">
+            <p class="form_details">Shift details</p>
+            <label>Shift Date</label>
+            <input type="date" formControlName="shiftDate" class="input">
+            <label>Shift Start Time</label>
+            <input type="time" formControlName="shiftStartTime" class="input">
+            <label>Shift End Time</label>
+            <input type="time" formControlName="shiftEndTime" class="input">
+            <label>Price per hour</label>
+            <input type="number" formControlName="shiftPrice" class="input">
+            <label>Shift Place</label>
+            <select formControlName="shiftPlace" name="Workplace" class="input">
+                <option value="Oslo">Oslo</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Teheran">Teheran</option>
+                <option value="Kiev">Kiev</option>
+                <option value="Tel Aviv">Tel Aviv</option>
+                <option value="San Marino">San Marino</option>
+            </select>
+            <label>Comments(optional)
+            </label>
+            <textarea cols="30" rows="3" formControlName="shiftComment" class="input"></textarea>
+            <br>
+            <button type="submit" [disabled]="shiftForm.invalid" class="btn">
+                <span>{{ isEditMode ? 'Edit Shift' : 'Add Shift' }}</span>
+            </button>
+        </div>
+    </form>
+</div>

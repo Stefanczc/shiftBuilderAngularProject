@@ -1,0 +1,19 @@
+<h2>Last week's shifts</h2>
+<div class="cards-container">
+    <div class="card" *ngFor="let shift of pastShifts">
+        <div class="align">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+        </div>
+        <h1>{{ shift.shiftPlace }}</h1>
+        <div class="shift-details">
+            <p>Date: {{ shift.shiftDate }}</p>
+            <p>Time: {{ shift.shiftStartTime }} - {{ shift.shiftEndTime }}</p>
+            <b>Profit: {{ shift.shiftProfit }}$</b>
+        </div>
+    </div>
+    <div class="no-shifts-message" *ngIf="pastShifts.length === 0 || pastShifts === undefined">
+        <i>No shifts scheduled for last week!</i>
+    </div>
+</div>

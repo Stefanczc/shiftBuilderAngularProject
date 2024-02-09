@@ -1,0 +1,56 @@
+<div class="main-body">
+    <div class="container">
+        <input type="checkbox" id="signup_toggle">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="form_front">
+                <p class="form_details">Registration</p>
+                <input type="text" formControlName="email" required placeholder="Email" class="input">
+                <span class="error-color"
+                    *ngIf="registerForm.get('email')?.hasError('invalidEmail') && registerForm.get('email')?.touched">
+                    Incorrect e-mail address
+                </span>
+                <input type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="password"
+                    placeholder="Password" class="input">
+                <img class="input-icon passwordField" src="../../../assets/images/show-svgrepo-com.svg" alt=""
+                    (click)="togglePasswordVisibility(1)">
+                <span class="error-color"
+                    *ngIf="registerForm.get('password')?.hasError('invalidPassword') && registerForm.get('password')?.touched">
+                    Missing one letter, one number, or a special character.
+                </span>
+
+                <input type="password" [type]="showPassword2 ? 'text' : 'password'" formControlName="passwordConfirm"
+                    placeholder="Password Confirmation" class="input">
+                <img class="input-icon confirmPasswordField" src="../../../assets/images/show-svgrepo-com.svg" alt=""
+                    (click)="togglePasswordVisibility(2)">
+                <span class="error-color"
+                    *ngIf="registerForm.get('passwordConfirm')?.hasError('passwordMatch') && registerForm.get('passwordConfirm')?.touched">
+                    Passwords do not match
+                </span>
+
+                <input type="text" formControlName="firstname" placeholder="Firstname" class="input">
+                <span class="error-color"
+                    *ngIf="registerForm.get('firstname')?.hasError('minlength') && registerForm.get('firstname')?.touched">
+                    You need at least 2 characters
+                </span>
+                <input type="text" formControlName="lastname" placeholder="Lastname" class="input">
+                <span class="error-color"
+                    *ngIf="registerForm.get('lastname')?.hasError('minlength') && registerForm.get('lastname')?.touched">
+                    You need at least 2 characters
+                </span>
+                <input type="date" formControlName="birthdate" class="input" placeholder="test">
+                <span class="error-color" *ngIf="registerForm.get('birthdate')?.hasError('invalidAgeRange')">
+                    You need to be between 6 and 130 years old.
+                </span>
+                <button class="btn" type="submit" [disabled]="registerForm.invalid">
+                    <span>Sign up</span>
+                </button>
+                <p class="no-account">Already have an account ?</p>
+                <button type="button" class="btn" routerLink="/login">
+                    <span>Login here!</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

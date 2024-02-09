@@ -1,1 +1,380 @@
-/* You can add global styles to this file, and also import other style files */
+$light-color: #fff;
+$dark-color: #232323;
+$purple-color: #6c63ff;
+
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./assets/fonts/static/OpenSans-Medium.ttf'); 
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: 'OpenSans', sans-serif;
+  background-color: #282828;
+  color: #fff;
+  overflow-x: hidden;
+  background-image: url(./assets/images/new-bg2.jpg);
+}
+.main-container,
+.home-container {
+  margin: 0 5%;
+  margin-top: 10px;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+.table-container {
+  max-height: 400px; 
+  overflow-y: auto;
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+table {
+    border-spacing: 0 2px;
+    font-size: 20px;
+}
+td, th {
+    padding: 8px; 
+    text-align: center;
+}
+td {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; 
+}
+tr {
+    transition: ease-in 0.2s;
+}
+tr {
+    &:hover {
+        cursor:default;
+        background-color: #ddd;
+        color: #212121;
+    }
+}
+
+.box {
+  font-family: OpenSans;
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 8px 16px;
+  text-align: center;
+  margin: 0 5px;
+  background: #6c63ff;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: #fff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color: #fff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+button {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.95);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .homepage-btn {
+    margin: 2em 1em;
+  }
+
+  .back-btn-container {
+    position: fixed;
+    top: 80px;
+  }
+  
+  .search-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    border-radius: 3.5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    color: #212121;
+    background-color: #232323;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1em 2em;
+  }
+  
+
+  .search-container > label {
+    color: #fff;
+  }
+
+  .input {
+    font-family: OpenSans;
+    font-size: 18px;
+    max-width: 250px;
+    background-color: #183153;
+    color: #fff;
+    padding: .15rem .5rem;
+    min-height: 35px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    &::placeholder {
+      color: #6c63ff;
+    }
+  }
+  
+  input:focus {
+    border-bottom: 2px solid #6c63ff;
+    border-radius: 4px 4px 2px 2px;
+  }
+  
+  input:hover {
+    outline: 1px solid lightgrey;
+  }
+
+  .profile-btn {
+    margin-top: 1em;
+  }
+  .auth-form > ul > li {
+    list-style-type: none;
+  }
+
+  //cards 
+
+  .card {
+    width: 190px;
+    height: 125px;
+    padding: 0.5rem;
+    background: rgba(198, 198, 198, 0.34);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.440);
+    border-left: 2px  rgba(255, 255, 255, 0.545) outset;
+    box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
+    transform: skewX(10deg);
+    transition: .4s;
+    overflow: hidden;
+    color: white;
+  }
+  
+  .card:hover {
+    height: 250px;
+    transform: skew(0deg);
+    cursor: pointer;
+  }
+  
+  .align {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-self: flex-start;
+  }
+  
+  .red {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff605c;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+  }
+  
+  .yellow {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffbd44;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+  }
+  
+  .green {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00ca4e;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.280);
+  }
+  
+  .card h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: rgb(218, 244, 237);
+    text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
+  }
+  
+  
+  .error-color {
+    color: #f10f0f;
+    text-align: center;
+}
+  
+// forms
+
+::selection {
+  background-color: gray;
+}
+
+.auth-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.profile-container {
+  height: 65vh;
+}
+.auth-form {
+  width: 400px;
+  height: 600px;
+  background-image: linear-gradient(to bottom, #424242,#202020);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+.register-container {
+  height: 100vh;
+}
+.register-form {
+  height: 800px;
+}
+.edit-shift-form {
+  height: 800px;
+}
+.title {
+  color: #6c63ff;
+  margin: 3rem 0;
+  font-size: 2rem;
+}
+.edit-shift-title {
+  margin: 1.5rem 0;
+}
+.auth-input:disabled {
+  opacity: 0.3;
+}
+.auth-input {
+  font-size: 20px;
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+  background-color: inherit;
+  color: wheat;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid wheat;
+  transition: all 400ms;
+}
+.form-input:not([disabled]):hover {
+  background-color: #424242;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.selected {
+  background-color: #6c63ff; 
+  font-weight: bold; 
+}
+
+.no-shifts-message {
+  color: #6c63ff;
+}
+
+.input-icon-p {
+  position: absolute;
+  right: 22%;
+  top: 44%;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  &:hover {
+    scale: 1.3;
+  }
+}
+
+.input-icon-p {
+  position: absolute;
+  right: 22%;
+  top: 44%;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  &:hover {
+    scale: 1.3;
+  }
+}
+
+
+  
+  
+  
+
+
+
+  

@@ -1,0 +1,33 @@
+<h1>Past Week's Shifts</h1>
+<br>
+<div *ngIf="pastShifts.length > 0">
+    <table>
+        <thead>
+            <tr>
+                <th>Worker name</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Wage per hour</th>
+                <th>Place</th>
+                <th>Profit</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shift of pastShifts">
+                <td>{{ shift.userName }}</td>
+                <td>{{ shift.shiftDate }}</td>
+                <td>{{ shift.shiftStartTime }}</td>
+                <td>{{ shift.shiftEndTime }}</td>
+                <td>{{ shift.shiftPrice }}$</td>
+                <td>{{ shift.shiftPlace }}</td>
+                <td>{{ shift.shiftProfit }}$</td>
+                <td>{{ shift.shiftComment }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="pastShifts.length === 0">
+    <p>No past shifts available.</p>
+</div>

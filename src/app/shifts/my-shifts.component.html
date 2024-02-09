@@ -1,0 +1,60 @@
+<button (click)="navigateToHomepage()" class="homepage-btn">
+    <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to Homepage</span>
+</button>
+
+<h1>My Shifts</h1>
+
+<div class="search-container">
+    <input type="search" class="input" placeholder="Type to search shifts..." [(ngModel)]="searchInput">
+    <label for="startDate"><b>Start Date </b><input type="date" class="input" [(ngModel)]="startDate"></label>
+    <label for="endDate"><b>End Date </b><input type="date" class="input" [(ngModel)]="endDate"></label>
+    <button (click)="searchShifts()">
+        <span class="box">Search</span>
+    </button>
+</div>
+<div class="main-container">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th *ngIf="uid">Worker name</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Wage per hour</th>
+                    <th>Place</th>
+                    <th>Profit</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let shift of shifts" [style.display]="shift.isVisible ? 'table-row' : 'none'">
+                    <td *ngIf="uid">{{ user?.firstname }}</td>
+                    <td>{{ shift.shiftDate }}</td>
+                    <td>{{ shift.shiftStartTime }}</td>
+                    <td>{{ shift.shiftEndTime }}</td>
+                    <td>{{ shift.shiftPrice }}$</td>
+                    <td>{{ shift.shiftPlace }}</td>
+                    <td>
+                        <div>{{ shift.shiftProfit }}$</div>
+                    </td>
+                    <td>
+                        <div>{{ shift.shiftComment }}</div>
+                    </td>
+                    <td>
+                        <button (click)="removeShift(shift)">
+                            <span class="box">Remove</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button (click)="navigateToEditShift(shift.shiftId)">
+                            <span class="box">Edit</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h1 class="no-shifts-message"><span *ngIf="shifts.length === 0">No shifts added!</span></h1>

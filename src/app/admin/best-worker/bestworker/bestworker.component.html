@@ -1,0 +1,16 @@
+<div class="cards-container">
+    <div *ngIf="userWithMostShifts" class="card">
+        <div class="align">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+        </div>
+        <h2>Worker with most shifts</h2>
+        <br>
+        <p>Name: <b>{{ userWithMostShifts.firstname | titlecase }} {{ userWithMostShifts.lastname | titlecase}}</b>
+        </p>
+    </div>
+    <div *ngIf="!userWithMostShifts">
+        <p>No shifts available.</p>
+    </div>
+</div>

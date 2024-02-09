@@ -1,0 +1,19 @@
+<h2>Next week's shifts</h2>
+<div class="cards-container">
+    <div class="card" *ngFor="let shift of futureShifts">
+        <div class="align">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+        </div>
+        <h1>{{ shift.shiftPlace }}</h1>
+        <div class="shift-details">
+            <p>Date: {{ shift.shiftDate }}</p>
+            <p>Time: {{ shift.shiftStartTime }} - {{ shift.shiftEndTime }}</p>
+            <b>Profit: {{ shift.shiftProfit }}$</b>
+        </div>
+    </div>
+    <div class="no-shifts-message" *ngIf="futureShifts.length === 0 || futureShifts === undefined">
+        <i>No shifts scheduled for next week!</i>
+    </div>
+</div>

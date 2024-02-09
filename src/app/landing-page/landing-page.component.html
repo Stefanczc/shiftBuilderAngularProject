@@ -1,0 +1,100 @@
+<div class="landing-page">
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Stefan's <b>E-Shift</b></a>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#work">Work</a></li>
+                <button class="landing-button" (click)="navigateToRegister()"><span class="box">Sign Up</span></button>
+            </ul>
+        </div>
+    </header>
+    <div class="content" id="home">
+        <div class="container">
+            <div class="info">
+                <h1>Welcome to <i>E-Shift!</i></h1>
+                <p>The ultimate solution for seamless shift tracking. Say goodbye to the
+                    hassle of managing your work hours – we've got it covered. Our user-friendly platform empowers you
+                    to take control of your working schedule effortlessly.
+                    <br>
+
+                    <b><i>Key Features:</i></b>
+                    <br>
+
+                    🔄 <b><i> Shift Tracking Made Easy: </i></b>
+                    Log your working hours with just a few taps. Our intuitive interface ensures that keeping track of
+                    your shifts is a breeze.
+                    <br>
+
+                    📅 <b><i> Calendar Integration: </i></b>
+                    Sync your shifts with your calendar to stay organized and never miss a workday. Manage your time
+                    efficiently and plan ahead.
+                    <br>
+
+                    🔒 <b><i>Secure Log In: </i></b>
+                    Your data is important to us. Log in securely with just a click using our <button class="box"
+                        (click)="navigateToLogin()"><span>Login</span></button>
+                    and
+                    access
+                    your personalized shift management experience.
+                </p>
+            </div>
+            <div class="image">
+                <img src="../../assets/images/landing-girl.png">
+            </div>
+        </div>
+    </div>
+    <div class="content" id="about">
+        <div class="container">
+            <div class="image">
+                <img src="../../assets/images/landing-man3.avif">
+            </div>
+            <div class="info">
+                <h1>At <i>E-Shift</i>, we understand...</h1>
+                <p>🛠️ <b><i>Innovative Solutions:</i></b>
+                    We're committed to staying ahead of the curve. [Your App Name] incorporates cutting-edge technology
+                    to bring you innovative solutions for effective shift management.
+                    <br>
+                    🤝 <b><i>Transparency and Trust:</i></b>
+                    We value transparency and trust in our user relationships. Your data security is our top priority,
+                    and we are committed to providing a secure and trustworthy platform.
+                    <br>
+                    🌐 <b><i>Global Impact:</i></b>
+                    E-shift is not just an application; it's a community. Join users from around the globe who
+                    are taking control of their work schedules and embracing a more organized and efficient lifestyle.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="work">
+        <div class="container">
+            <div class="info">
+                <h1>Our <i>Work</i></h1>
+                <p>E-shift is your dedicated partner in simplifying shift management and transforming the way
+                    you keep track of your working hours. Here's how our app works to enhance your work-life balance:
+                    <br>
+                    - <i>Effortless Shift Logging:</i>
+                    Log your work hours seamlessly with a user-friendly interface. Our app simplifies the process,
+                    allowing you to record your shifts effortlessly.
+                    <br>
+                    - <i>Calendar Integration:</i>
+                    Sync your work schedule with your device's calendar. Stay organized by having your shifts
+                    seamlessly integrated with your personal calendar, giving you a comprehensive view of your
+                    commitments.
+                    <br>
+                </p>
+            </div>
+            <div class="image">
+                <img src="../../assets/images/landing-people.avif">
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top__container">
+        <button class="back-to-top" (click)="scrollToTop()" [style.display]="backToTopVisible ? 'block' : 'none'"><img
+                src="../../assets/images/arrow-top-svgrepo-com.svg" alt=""></button>
+        <span class="back-to-top__text">back to top</span>
+    </div>
+
+</div>
