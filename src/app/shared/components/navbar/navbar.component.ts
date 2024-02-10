@@ -30,6 +30,8 @@ export class NavbarComponent implements OnInit {
     this.user$ = this.shareDataService.userData$;
     this.isLoggedIn$ = this.authService.isLoggedInSubject;
 
+    const user = this.shareDataService.getUserData();
+
     this.router.events.pipe(
       filter((event: Event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {

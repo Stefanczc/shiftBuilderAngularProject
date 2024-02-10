@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BestworkerComponent } from './best-worker/bestworker/bestworker.component';
 import { PastshiftsComponent } from './shifts/past-shifts/pastshifts/pastshifts.component';
+import { adminOnlyGuard } from '../shared/guards/admin-only.guard';
 
 
 
@@ -31,14 +32,17 @@ import { PastshiftsComponent } from './shifts/past-shifts/pastshifts/pastshifts.
           {
             path: 'homepage',
             component: AdminHomepageComponent,
+            canActivate: [adminOnlyGuard]
             },
           {
             path: 'shifts',
             component: AdminAllShiftsComponent,
+            canActivate: [adminOnlyGuard]
             },
           {
             path: 'workers',
             component: AdminAllWorkersComponent,
+            canActivate: [adminOnlyGuard]
             },
         ],
       },
