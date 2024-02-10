@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
-import { Observable } from 'rxjs';
-import { Alert } from '../../interfaces/alert.model'; 
+import { Alert } from '../../interfaces/alert.model';
 
 @Component({
   selector: 'app-modal',
@@ -9,17 +8,17 @@ import { Alert } from '../../interfaces/alert.model';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  isVisible$: Observable<boolean> = this.modalService.isVisible$;
-  alerts$!: Observable<Alert[]>; 
+  alerts: Alert[] = [];
 
   constructor(private modalService: ModalService) {}
 
   ngOnInit() {
-    this.alerts$ = this.modalService.alerts$;
+    this.modalService.alerts$.subscribe(alerts => {
+      this.alerts = alerts;
+    });
   }
 
   closeAlert(alert: Alert): void {
     this.modalService.closeModal(alert);
   }
-  
 }

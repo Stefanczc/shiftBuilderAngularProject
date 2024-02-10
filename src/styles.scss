@@ -18,7 +18,8 @@ body {
   font-family: 'OpenSans', sans-serif;
   background-color: #282828;
   color: #fff;
-  background-image: url(./assets/images/new-bg2.jpg);
+  background-image: url(./assets/images/tomorrow-bg.jpg);
+  background-size: cover;
 }
 .main-container,
 .home-container {
@@ -238,9 +239,6 @@ button {
     transition: .4s;
     overflow: hidden;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
   
   .card:hover {

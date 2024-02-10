@@ -3,5 +3,6 @@ export interface Alert {
     content: string;
     messageType: string;
     isVisible: boolean;
+    
   }
   
