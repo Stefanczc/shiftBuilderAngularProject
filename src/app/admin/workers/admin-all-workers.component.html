@@ -10,7 +10,7 @@
                 <tr>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>Password Confirmation</th>
+                    <th>Confirmation</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Birthdate</th>
@@ -24,7 +24,7 @@
                     <td>{{ user.passwordConfirm }}</td>
                     <td>{{ user.firstname | titlecase}}</td>
                     <td>{{ user.lastname | titlecase}}</td>
-                    <td>{{ user.birthdate }}</td>
+                    <td>{{ user.birthdate | date:'dd-MMM-yyyy' }}</td>
                     <td>
                         <button (click)="navigateToEditUser(user.uid)">
                             <span class="box">Edit</span>

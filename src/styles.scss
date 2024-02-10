@@ -53,15 +53,17 @@ td {
     border: 2.5px solid #ddd;
 }
 tr {
-    transition: ease-in 0.2s;
-}
-tr {
+    transition: ease-in-out 0.3s;
+    font-weight: normal;
     &:hover {
-        cursor:default;
-        background-color: #ddd;
-        color: #212121;
-    }
+      cursor:default;
+      background-color: #ddd;
+      color: #212121;
+      border: 2.5px solid red;
+      font-weight: bold;
+  }
 }
+
 
 .box {
   font-family: OpenSans;
@@ -226,6 +228,9 @@ button {
     transition: .4s;
     overflow: hidden;
     color: white;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
   }
   
   .card:hover {
@@ -268,7 +273,7 @@ button {
   
   .card h1 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.35rem;
     color: rgb(218, 244, 237);
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.573);
   }

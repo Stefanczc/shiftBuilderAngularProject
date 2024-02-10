@@ -8,9 +8,9 @@
         </div>
         <h1>{{ shift.shiftPlace }}</h1>
         <div class="shift-details">
-            <p>Date: {{ shift.shiftDate }}</p>
+            <p>Date: {{ shift.shiftDate | date:'dd-MMM-yyyy' }}</p>
             <p>Time: {{ shift.shiftStartTime }} - {{ shift.shiftEndTime }}</p>
-            <b>Profit: {{ shift.shiftProfit }}$</b>
+            <p>Profit: <b class="money">{{ shift.shiftProfit }}$</b></p>
         </div>
     </div>
     <div class="no-shifts-message" *ngIf="futureShifts.length === 0 || futureShifts === undefined">

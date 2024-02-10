@@ -25,12 +25,14 @@
                     <th>Place</th>
                     <th>Profit</th>
                     <th>Comments</th>
+                    <th>Remove</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let shift of shifts" [style.display]="shift.isVisible ? 'table-row' : 'none'">
                     <td *ngIf="uid">{{ user?.firstname }}</td>
-                    <td>{{ shift.shiftDate }}</td>
+                    <td>{{ shift.shiftDate | date:'dd-MMM-yyyy' }}</td>
                     <td>{{ shift.shiftStartTime }}</td>
                     <td>{{ shift.shiftEndTime }}</td>
                     <td>{{ shift.shiftPrice }}$</td>
