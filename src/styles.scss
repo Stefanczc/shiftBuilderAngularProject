@@ -18,7 +18,6 @@ body {
   font-family: 'OpenSans', sans-serif;
   background-color: #282828;
   color: #fff;
-  overflow-x: hidden;
   background-image: url(./assets/images/new-bg2.jpg);
 }
 .main-container,
@@ -26,21 +25,20 @@ body {
   margin: 0 5%;
   margin-top: 10px;
 }
-.table-container {
-  display: flex;
-  justify-content: center;
-}
+
 .table-container {
   max-height: 400px; 
-  overflow-y: auto;
-  max-width: fit-content;
+  overflow: auto; 
   margin: 0 auto;
   padding: 0 15px;
 }
 
 table {
-    border-spacing: 0 2px;
+    border-spacing: 0 1px;
+
     font-size: 20px;
+    white-space: nowrap;
+    min-width: 100%; 
 }
 th {
   border: 2.5px solid #ddd;
@@ -62,6 +60,18 @@ tr {
       border: 2.5px solid red;
       font-weight: bold;
   }
+}
+::-webkit-scrollbar {
+  width: 1em;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-track {
+  background: var(--darkWhite);
 }
 
 
@@ -228,9 +238,9 @@ button {
     transition: .4s;
     overflow: hidden;
     color: white;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .card:hover {

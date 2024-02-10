@@ -2,36 +2,38 @@
     <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to Homepage</span>
 </button>
 
-<h1>All Workers</h1>
-<div class="table-container">
-    <div *ngIf="users.length > 0">
-        <table>
-            <thead>
-                <tr>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Confirmation</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Birthdate</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users">
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.password }}</td>
-                    <td>{{ user.passwordConfirm }}</td>
-                    <td>{{ user.firstname | titlecase}}</td>
-                    <td>{{ user.lastname | titlecase}}</td>
-                    <td>{{ user.birthdate | date:'dd-MMM-yyyy' }}</td>
-                    <td>
-                        <button (click)="navigateToEditUser(user.uid)">
-                            <span class="box">Edit</span>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="main-container">
+    <h1>All Workers</h1>
+    <div class="table-container">
+        <div *ngIf="users.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Confirmation</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Birthdate</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.password }}</td>
+                        <td>{{ user.passwordConfirm }}</td>
+                        <td>{{ user.firstname | titlecase}}</td>
+                        <td>{{ user.lastname | titlecase}}</td>
+                        <td>{{ user.birthdate | date:'dd-MMM-yyyy' }}</td>
+                        <td>
+                            <button (click)="navigateToEditUser(user.uid)">
+                                <span class="box">Edit</span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

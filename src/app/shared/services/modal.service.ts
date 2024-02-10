@@ -16,7 +16,7 @@ export class ModalService {
     this.isVisibleSubject.next(true);
     const newAlert: Alert = { title, content, messageType, isVisible: true };
     this.alertsSubject.next([...this.alertsSubject.getValue(), newAlert]);
-    this.closeAlertAfterDelay(newAlert);
+    // this.closeAlertAfterDelay(newAlert);
   }
 
   openSessionModal(title: string, content: string, messageType: string): void {
