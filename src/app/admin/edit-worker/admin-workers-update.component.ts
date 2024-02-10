@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from '../../shared/models/user.model';
+import { User } from '../../shared/interfaces/user.model';
 import { birthdateValidator, emailValidator, passwordValidator } from '../../shared/validators/validators';
 import { ShareDataService } from '../../shared/services/share-data.service';
 import { ActivatedRoute, Router } from '@angular/router';

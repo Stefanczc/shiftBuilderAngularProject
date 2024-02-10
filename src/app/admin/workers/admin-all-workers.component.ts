@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../shared/models/user.model';
+import { User } from '../../shared/interfaces/user.model';
 import { ShareDataService } from '../../shared/services/share-data.service';
 import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
@@ -38,7 +38,7 @@ export class AdminAllWorkersComponent implements OnInit {
     this.router.navigate([`/${ROUTE_ADMIN_HOMEPAGE}`]);
   }
   navigateToEditUser(uid: string) {
-    this.router.navigate(['/user', uid]);
+    this.router.navigate(['/admin', uid]);
   }
 
 }

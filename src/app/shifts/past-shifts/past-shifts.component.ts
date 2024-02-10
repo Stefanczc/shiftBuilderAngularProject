@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShiftService } from 'src/app/shared/services/shift.service';
-import { Shift } from 'src/app/shared/models/shift.model';
+import { Shift } from 'src/app/shared/interfaces/shift.model';
 
 @Component({
   selector: 'app-past-shifts',

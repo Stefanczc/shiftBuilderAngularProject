@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Shift } from '../models/shift.model';
+import { Shift } from '../interfaces/shift.model';
 import { Firestore } from '@angular/fire/firestore';
 import { collection, deleteDoc, doc, getDoc, getDocs, query, setDoc, updateDoc, where } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';

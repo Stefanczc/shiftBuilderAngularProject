@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Shift } from '../../shared/models/shift.model';
+import { Shift } from '../../shared/interfaces/shift.model';
 import { ShiftService } from '../../shared/services/shift.service';
 import { AuthService } from '../../shared/services/authentication.service';  
 import { Router } from '@angular/router';

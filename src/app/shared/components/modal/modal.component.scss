@@ -5,6 +5,7 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out;
 }
 
 .alert {
@@ -12,15 +13,17 @@
   padding: 10px 25px;
   border-radius: 5px;
   transform: translateX(1000px); 
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 1s ease-in-out; 
 
   &.visible {
     transform: translateX(0); 
+    transition: transform 0.3s ease-in-out;
   }
 
   &.success-alert {
     background-color: #128542;
     border-left: 5px solid darken(#128542, 50);
+    transition: transform 0.3s ease-in-out;
     z-index: 1000;
 
     .close {

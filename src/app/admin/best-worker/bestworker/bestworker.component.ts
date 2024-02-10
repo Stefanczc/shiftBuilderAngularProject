@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/models/user.model'; 
-import { Shift } from 'src/app/shared/models/shift.model';
+import { User } from 'src/app/shared/interfaces/user.model'; 
+import { Shift } from 'src/app/shared/interfaces/shift.model';
 import { AuthService } from 'src/app/shared/services/authentication.service';
 import { ShareDataService } from 'src/app/shared/services/share-data.service';
 import { ShiftService } from 'src/app/shared/services/shift.service';
@@ -38,7 +38,7 @@ export class BestworkerComponent implements OnInit {
       this.pastShifts = this.filterPastShifts(this.shifts);
       const userDetailsPromises = this.pastShifts.map(async (shift) => {
         const user = await this.shareDateService.getUserByUid(shift.uid);
-        return { ...shift, userName: user ? `${user.firstname} ${user.lastname}` : 'Unknown User' };
+        return { ...shift, userName: user ? `${user.firstname} ${user.lastname}` : 'Inactive User' };
       });
       this.pastShifts = await Promise.all(userDetailsPromises);
       this.users = await this.shareDateService.getAllUsers();

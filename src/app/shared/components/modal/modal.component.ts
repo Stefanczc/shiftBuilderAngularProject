@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 import { Observable } from 'rxjs';
-import { Alert } from '../../models/alert.model'; 
+import { Alert } from '../../interfaces/alert.model'; 
 
 @Component({
   selector: 'app-modal',

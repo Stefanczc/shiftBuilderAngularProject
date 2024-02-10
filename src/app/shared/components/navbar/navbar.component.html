@@ -4,8 +4,8 @@
     <li><a (click)="navigateToMyShifts()">MY SHIFTS</a></li>
     <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
     <li><a (click)="navigateToProfilePage()">PROFILE</a></li>
-    <li><span>Hello {{ (user$ | async)?.firstname | uppercase }}.{{ (user$ | async)?.lastname?.slice(0, 2) | uppercase
-            }}</span></li>
+    <li><span>Hello, {{ (user$ | async)?.firstname | titlecase }} {{ (user$ | async)?.lastname | titlecase
+            }} !</span></li>
     <li><a (click)="logout()">LOG OUT</a></li>
 </ul>
 
@@ -15,7 +15,7 @@
     <li><a (click)="navigateToAllShifts()">SHIFTS</a></li>
     <li><a (click)="navigateToAllWorkers()">WORKERS</a></li>
     <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
-    <li class=" "><span>Hello {{ (user$ | async)?.firstname | uppercase }}</span>
+    <li class=" "><span>Hello, {{ (user$ | async)?.firstname | titlecase }} !</span>
     </li>
     <li><a (click)="logout()">LOG OUT</a></li>
 </ul>

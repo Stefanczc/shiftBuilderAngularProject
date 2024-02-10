@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Alert } from '../models/alert.model';
+import { Alert } from '../interfaces/alert.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,12 @@ export class ModalService {
     const newAlert: Alert = { title, content, messageType, isVisible: true };
     this.alertsSubject.next([...this.alertsSubject.getValue(), newAlert]);
     this.closeAlertAfterDelay(newAlert);
+  }
+
+  openSessionModal(title: string, content: string, messageType: string): void {
+    this.isVisibleSubject.next(true);
+    const newAlert: Alert = { title, content, messageType, isVisible: true };
+    this.alertsSubject.next([...this.alertsSubject.getValue(), newAlert]);
   }
 
   closeModal(alert: Alert): void {

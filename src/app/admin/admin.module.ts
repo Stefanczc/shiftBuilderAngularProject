@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BestworkerComponent } from './best-worker/bestworker/bestworker.component';
 import { PastshiftsComponent } from './shifts/past-shifts/pastshifts/pastshifts.component';
 import { adminOnlyGuard } from '../shared/guards/admin-only.guard';
+import { authGuard } from '../shared/guards/auth.guard';
 
 
 
@@ -32,18 +33,23 @@ import { adminOnlyGuard } from '../shared/guards/admin-only.guard';
           {
             path: 'homepage',
             component: AdminHomepageComponent,
-            canActivate: [adminOnlyGuard]
+            canActivate: [adminOnlyGuard, authGuard]
             },
           {
             path: 'shifts',
             component: AdminAllShiftsComponent,
-            canActivate: [adminOnlyGuard]
+            canActivate: [adminOnlyGuard, authGuard]
             },
           {
             path: 'workers',
             component: AdminAllWorkersComponent,
-            canActivate: [adminOnlyGuard]
-            },
+            canActivate: [adminOnlyGuard, authGuard]
+          },
+          {
+            path: ':uid', 
+            component: AdminWorkersUpdateComponent,
+            canActivate: [adminOnlyGuard, authGuard]
+          },
         ],
       },
     ]),

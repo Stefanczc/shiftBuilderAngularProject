@@ -5,8 +5,9 @@ import { Firestore } from "@angular/fire/firestore";
 import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { BehaviorSubject, Subject } from "rxjs";
 import { ShareDataService } from "./share-data.service";
-import { Router } from "@angular/router";
-import { ROUTE_ADMIN_HOMEPAGE, ROUTE_HOMEPAGE } from "src/app/app-routing.module";
+import { NavigationEnd, Router } from "@angular/router";
+import { ROUTE_ADMIN_HOMEPAGE, ROUTE_HOMEPAGE, ROUTE_LOGIN } from "src/app/app-routing.module";
+import { ModalService } from "./modal.service";
 
 @Injectable({
   providedIn: 'root',
@@ -26,10 +27,18 @@ export class AuthService {
     private firestore: Firestore,
     private zone: NgZone,
     private sharedDataService: ShareDataService,
-    private router: Router
+    private router: Router,
+    private modalService: ModalService
   ) 
     {
     this.initAuth();
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url.includes('/login') || event.url.includes('/register')) {
+          this.logout();
+        }
+      }
+    })
   }
 
   get uid(): string | null {
@@ -52,12 +61,6 @@ export class AuthService {
         }
       });
     });
-  }
-
-  async logout() {
-    const auth = getAuth();
-    await signOut(auth);
-    console.log('User logged out.');
   }
 
   async getUserData(userId: string) {
@@ -128,18 +131,29 @@ export class AuthService {
                     this.router.navigate([`/${ROUTE_HOMEPAGE}`]);
                 }
             }
-            this.isLoggedInSubject.next(true);
-        } catch (error: any) {
-            console.error('Error logging in:', error);
-            this.isLoggedInSubject.next(false);
-            throw error;
+          localStorage.setItem('userLoggedIn', 'true');
+          setTimeout(() => {
+            this.logout();
+            this.modalService.openSessionModal('Error', 'Your session expired!', 'error');
+            this.router.navigate([`${ROUTE_LOGIN}`]);
+          }, 900000);
+          this.isLoggedInSubject.next(true);
+        }
+        catch (error: any) {
+          console.error('Error logging in:', error);
+          this.isLoggedInSubject.next(false);
+          throw error;
         }
     } else {
         throw new Error('Form validation failed');
     }
-}
+  }
 
-
-  
+  async logout() {
+    const auth = getAuth();
+    await signOut(auth);
+    localStorage.removeItem('userLoggedIn');
+    console.log('User logged out.');
+  }
   
 }

@@ -14,6 +14,7 @@
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Birthdate</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,8 +22,8 @@
                     <td>{{ user.email }}</td>
                     <td>{{ user.password }}</td>
                     <td>{{ user.passwordConfirm }}</td>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.firstname | titlecase}}</td>
+                    <td>{{ user.lastname | titlecase}}</td>
                     <td>{{ user.birthdate }}</td>
                     <td>
                         <button (click)="navigateToEditUser(user.uid)">

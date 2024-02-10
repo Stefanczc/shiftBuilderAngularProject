@@ -42,13 +42,15 @@ table {
     border-spacing: 0 2px;
     font-size: 20px;
 }
+th {
+  border: 2.5px solid #ddd;
+}
 td, th {
     padding: 8px; 
     text-align: center;
 }
 td {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd; 
+    border: 2.5px solid #ddd;
 }
 tr {
     transition: ease-in 0.2s;
@@ -73,8 +75,9 @@ tr {
   text-align: center;
   margin: 0 5px;
   background: #6c63ff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 900;
+  font-size: 15px;
 }
 
 .box:before {

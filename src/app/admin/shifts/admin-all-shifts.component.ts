@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShiftService } from '../../shared/services/shift.service';
-import { Shift } from '../../shared/models/shift.model';
+import { Shift } from '../../shared/interfaces/shift.model';
 import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
 import { ShareDataService } from '../../shared/services/share-data.service';
@@ -18,6 +18,7 @@ export class AdminAllShiftsComponent implements OnInit {
   searchWorkerInput: string = '';
   startDate: string = '';
   endDate: string = '';
+  
   constructor (
     private shiftService: ShiftService,
     private router: Router,
@@ -34,7 +35,7 @@ export class AdminAllShiftsComponent implements OnInit {
       this.shifts = await this.shiftService.getAllShifts();
       const userDetailsPromises = this.shifts.map(async (shift) => {
         const user = await this.shareDataService.getUserByUid(shift.uid);
-        return { ...shift, userName: user ? `${user.firstname} ${user.lastname}` : 'Unknown User' };
+        return { ...shift, userName: user ? `${user.firstname} ${user.lastname}` : 'Inactive User' };
       });
       const shiftsWithUserDetails = await Promise.all(userDetailsPromises);
       this.shifts = shiftsWithUserDetails;

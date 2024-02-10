@@ -3,14 +3,14 @@
 </button>
 
 <button *ngIf="user" (click)="navigateToMyShifts()" class="user-profile-shifts">
-    <span class="box">go to {{ user.firstname | uppercase }}'s shifts <img
+    <span class="box">go to {{ user.firstname | titlecase }}'s shifts <img
             src="../../../assets/images/arrow-go-forward-svgrepo-com.svg" alt="back-img"></span>
 </button>
 
 <div class="container">
     <form [formGroup]="workerForm" (submit)="updateWorker()" class="form">
         <div *ngIf="user" class="form_front">
-            <h2 *ngIf="user" class="form_details"> {{ user.firstname | uppercase }}'s Profile</h2>
+            <h2 *ngIf="user" class="form_details"> {{ user.firstname | titlecase }}'s Profile</h2>
             <label for="">E-mail</label>
             <input formControlName="email" class="input">
             <label for="">Password</label>
