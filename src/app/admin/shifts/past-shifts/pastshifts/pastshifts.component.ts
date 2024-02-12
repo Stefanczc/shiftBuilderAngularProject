@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Shift } from 'src/app/shared/interfaces/shift.model';
 import { User } from 'src/app/shared/interfaces/user.model';
 import { AuthService } from 'src/app/shared/services/authentication.service';
-import { LoadingService } from 'src/app/shared/services/loading.service';
 import { ShareDataService } from 'src/app/shared/services/share-data.service';
 import { ShiftService } from 'src/app/shared/services/shift.service';
 

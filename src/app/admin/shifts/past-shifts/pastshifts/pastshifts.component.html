@@ -17,7 +17,7 @@
         <tbody>
             <tr *ngFor="let shift of pastShifts">
                 <td>{{ shift.userName | titlecase}}</td>
-                <td>{{ shift.shiftDate }}</td>
+                <td>{{ shift.shiftDate | date: 'dd-MMM-yyyy'}}</td>
                 <td>{{ shift.shiftStartTime }}</td>
                 <td>{{ shift.shiftEndTime }}</td>
                 <td>{{ shift.shiftPrice }}$</td>
