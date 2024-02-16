@@ -8,14 +8,19 @@
                     *ngIf="loginForm.get('email')?.hasError('invalidEmail') && loginForm.get('email')?.touched">
                     Incorrect e-mail address
                 </span>
-                <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="input"
-                    placeholder="Password">
-                <img class="input-icon" src="../../../assets/images/show-svgrepo-com.svg" alt=""
-                    (click)="togglePasswordVisibility()">
+                <div>
+                    <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="input"
+                        placeholder="Password">
+                    <div class="input-icon-container">
+                        <img class="input-icon" src="../../../assets/images/show-svgrepo-com.svg" alt=""
+                            (click)="togglePasswordVisibility()">
+                    </div>
+                </div>
                 <span class="error-color"
                     *ngIf="loginForm.get('password')?.hasError('invalidPassword') && loginForm.get('password')?.touched">
                     Missing one letter, one number or a special character.
                 </span>
+                <br>
                 <button class="btn">Login</button>
                 <p class="no-account">Don't have an account yet ?</p>
                 <button type="button" class="btn" routerLink="/register">

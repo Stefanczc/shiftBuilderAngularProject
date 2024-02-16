@@ -19,8 +19,9 @@ body {
   background-color: #282828;
   color: #fff;
   background-image: url(./assets/images/tomorrow-bg.jpg);
-  background-size: cover;
+  overflow-x: hidden; 
 }
+
 .main-container,
 .home-container {
   margin: 0 5%;
@@ -28,7 +29,7 @@ body {
 }
 
 .table-container {
-  max-height: 400px; 
+  max-height: 50vh; 
   overflow: auto; 
   margin: 0 auto;
   padding: 0 15px;
@@ -184,7 +185,6 @@ button {
     padding: 1em 2em;
   }
   
-
   .search-container > label {
     color: #fff;
   }
@@ -193,7 +193,7 @@ button {
     font-family: OpenSans;
     font-size: 18px;
     max-width: 250px;
-    background-color: #183153;
+    // background-color: #183153;
     color: #fff;
     padding: .15rem .5rem;
     min-height: 35px;
@@ -202,8 +202,10 @@ button {
     border: none;
     line-height: 1.15;
     box-shadow: 0px 10px 20px -18px;
+    background-color: #6c63ff;
     &::placeholder {
-      color: #6c63ff;
+      color: #fff;
+      
     }
   }
   
@@ -290,6 +292,7 @@ button {
   .error-color {
     color: #f10f0f;
     text-align: center;
+    font-weight: bold;
 }
   
 // forms

@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     position: absolute;
     backface-visibility: hidden;
     padding: 65px 100px;
@@ -119,9 +119,14 @@
     transform: rotateY(-180deg);
   }
 
+  .input-icon-container {
+    position: relative;
+  }
+
   .input-icon {
     position: absolute;
-    right: 15%;
+    left: 550px;
+    bottom: 10px;
     cursor: pointer;
     transition: ease-in-out 0.3s;
     &:hover {

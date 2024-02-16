@@ -105,16 +105,18 @@ export class ProfileComponent implements OnInit {
     if (!confirmed) {
       return;
     }
-    try {
+    else {
       const userId = this.user.uid;
       const userCollection = collection(this.firestore, 'users');
       const userRef = doc(userCollection, userId);
       await updateDoc(userRef, { isDisabled: true });
+      this.modalService.openModal('Success', 'Your account has been removed!', 'success');
       this.logout();
-    } catch (error) {
-      console.error('Error disabling user:', error);
-      this.modalService.openModal('Error', 'Failed to disable user. Please try again.', 'danger');
-    }
+    } 
+    // catch (error) {
+    //   console.error('Error disabling user:', error);
+    //   this.modalService.openModal('Error', 'Failed to disable user. Please try again.', 'danger');
+    // }
   }
 
   logout() {

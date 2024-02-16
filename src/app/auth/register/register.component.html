@@ -9,24 +9,30 @@
                     *ngIf="registerForm.get('email')?.hasError('invalidEmail') && registerForm.get('email')?.touched">
                     Incorrect e-mail address
                 </span>
-                <input type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="password"
-                    placeholder="Password" class="input">
-                <img class="input-icon passwordField" src="../../../assets/images/show-svgrepo-com.svg" alt=""
-                    (click)="togglePasswordVisibility(1)">
+                <div>
+                    <input type="password" [type]="showPassword1 ? 'text' : 'password'" formControlName="password"
+                        placeholder="Password" class="input">
+                    <div class="input-icon-container">
+                        <img class="input-icon" src="../../../assets/images/show-svgrepo-com.svg" alt=""
+                            (click)="togglePasswordVisibility(1)">
+                    </div>
+                </div>
                 <span class="error-color"
                     *ngIf="registerForm.get('password')?.hasError('invalidPassword') && registerForm.get('password')?.touched">
                     Missing one letter, one number, or a special character.
                 </span>
-
-                <input type="password" [type]="showPassword2 ? 'text' : 'password'" formControlName="passwordConfirm"
-                    placeholder="Password Confirmation" class="input">
-                <img class="input-icon confirmPasswordField" src="../../../assets/images/show-svgrepo-com.svg" alt=""
-                    (click)="togglePasswordVisibility(2)">
+                <div>
+                    <input type="password" [type]="showPassword2 ? 'text' : 'password'"
+                        formControlName="passwordConfirm" placeholder="Password Confirmation" class="input">
+                    <div class="input-icon-container">
+                        <img class="input-icon" src="../../../assets/images/show-svgrepo-com.svg" alt=""
+                            (click)="togglePasswordVisibility(2)">
+                    </div>
+                </div>
                 <span class="error-color"
                     *ngIf="registerForm.get('passwordConfirm')?.hasError('passwordMatch') && registerForm.get('passwordConfirm')?.touched">
                     Passwords do not match
                 </span>
-
                 <input type="text" formControlName="firstname" placeholder="Firstname" class="input">
                 <span class="error-color"
                     *ngIf="registerForm.get('firstname')?.hasError('minlength') && registerForm.get('firstname')?.touched">
@@ -41,6 +47,7 @@
                 <span class="error-color" *ngIf="registerForm.get('birthdate')?.hasError('invalidAgeRange')">
                     You need to be between 6 and 130 years old.
                 </span>
+                <br>
                 <button class="btn" type="submit" [disabled]="registerForm.invalid">
                     <span>Sign up</span>
                 </button>

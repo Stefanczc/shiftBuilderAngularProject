@@ -115,10 +115,14 @@
     transform: rotateY(-180deg);
   }
 
+  .input-icon-container {
+    position: relative;
+  }
+
   .input-icon {
     position: absolute;
-    right: 22%;
-    top: 44%;
+    left: 400px;
+    bottom: 10px;
     cursor: pointer;
     transition: ease-in-out 0.3s;
     &:hover {
