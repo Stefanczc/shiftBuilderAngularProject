@@ -118,5 +118,35 @@
     transform: rotateY(-180deg);
   }
 
-  
+  @media screen and (max-width: 1024px) {
+    .form_details {
+      font-size: 18px;
+    }
+     .form .form_front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: absolute;
+      backface-visibility: hidden;
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: rgba(136, 165, 191, 0.3) 9px 9px 40px 10px, rgba(255, 255, 255, 0.3) -6px -2px 16px 0px;
+      background: #232323;
+    }
+ }
+
+ @media screen and (max-width: 768px) {
+   .form .form_front {
+    padding: 15px;
+   }
+   .input {
+    min-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .input {
+   min-width: 300px;
+ }
+}
 

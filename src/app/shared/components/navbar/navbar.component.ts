@@ -42,6 +42,12 @@ export class NavbarComponent implements OnInit {
       this.user = userData;
     });
   }
+
+  showMobileMenu: boolean = false;
+
+  toggleMobileMenu() {
+    this.showMobileMenu = !this.showMobileMenu;
+  }
   
   navigateToMyShifts() {
     this.router.navigate([`/${ROUTE_MYSHIFTS}`]);

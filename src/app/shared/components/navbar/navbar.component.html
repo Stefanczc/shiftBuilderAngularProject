@@ -9,6 +9,23 @@
     <li><a (click)="logout()">LOG OUT</a></li>
 </ul>
 
+<div class="navbar-container">
+    <button class="mobile-menu" (click)="toggleMobileMenu()">
+        <img src="../../../../assets/images/mobile-menu.svg" alt="">
+    </button>
+
+    <ul class="navbar-list-mobile" *ngIf="showMobileMenu">
+        <li><a><span (click)="navigateToHomepage(); toggleMobileMenu()">HOMEPAGE</span></a></li>
+        <li><a (click)="navigateToMyShifts(); toggleMobileMenu()">MY SHIFTS</a></li>
+        <li><a (click)="navigateToAddShift(); toggleMobileMenu()">ADD SHIFT</a></li>
+        <li><a (click)="navigateToProfilePage(); toggleMobileMenu()">PROFILE</a></li>
+        <li><a (click)="logout(); toggleMobileMenu()">LOG OUT</a></li>
+        <li><a (click)="toggleMobileMenu()">CLOSE</a></li>
+    </ul>
+</div>
+
+
+
 <ul class="navbar-list" *ngIf="!(isLoginPage) && (this.user$ | async)?.role === 'admin' && (isLoggedIn$ | async)">
     <li><a><span (click)="navigateToAdminHomepage()"><img src="../../assets/images/worker-miner-svgrepo-com.svg"
                     alt="logo-img"></span></a></li>

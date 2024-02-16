@@ -39,3 +39,55 @@
 .navbar-list > li:nth-child(5) {
     margin-left: auto;
 }
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    right: 0;
+}
+.navbar-container {
+    position: relative;
+    z-index: 9999999;
+}
+.navbar-list-mobile {
+    position: absolute;
+    width: 100vw;
+    padding: 10px;
+    gap: 10px;
+    font-size: 22.5px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #232323;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+.navbar-list-mobile > li > a {
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    padding: 5px 15px; 
+    transition: ease-in-out 0.5s;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    color: #6c63ff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    &:hover {
+        color: #fff;
+        cursor: pointer; 
+        background-color: #6c63ff;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navbar-list {
+        display: none;
+    }
+    .mobile-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+ }

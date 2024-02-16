@@ -59,6 +59,14 @@ export class AdminAllShiftsComponent implements OnInit {
       shift.isVisible = matchesWorker && matchesShift && matchesStartDate && isWithinRange;
     });
   }
+
+  clearSearchInputs() {
+    this.searchShiftInput = '';
+    this.searchWorkerInput = '';
+    this.startDate = '';
+    this.endDate = '';
+    this.searchShifts();
+  }
   
   async removeShift(shift: Shift) {
     try {

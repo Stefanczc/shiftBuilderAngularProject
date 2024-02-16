@@ -16,3 +16,10 @@ b {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 50px;
 }
+
+@media screen and (max-width: 600px) {
+    .shifts-container {
+        grid-template-columns: 1fr;
+    }
+
+ }
