@@ -86,6 +86,13 @@ export class MyShiftsComponent implements OnInit {
     });
   }
 
+  clearSearchInputs() {
+    this.searchInput = '';
+    this.startDate = '';
+    this.endDate = '';
+    this.searchShifts();
+  }
+
   removeShift(shift: Shift ) {
     this.shiftService.deleteShift(shift.shiftId);
     this.loadingService.showForDuration(1000);
