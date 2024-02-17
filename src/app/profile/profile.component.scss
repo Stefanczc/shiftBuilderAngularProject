@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 80vh;
    }
   
   .form {
@@ -106,4 +106,26 @@
 
   .form_front > li {
     list-style-type: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .form_details {
+      font-size: 18px;
+    }
+     .form .form_front {
+      padding: 25px 35px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .form .form_front {
+      padding: 15px;
+    }
+    .input {
+      min-width: 500px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .input {
+    min-width: 300px;
+    }
   }
