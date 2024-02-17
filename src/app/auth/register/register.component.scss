@@ -140,3 +140,36 @@
   .confirmPasswordField {
     top: 37%;
   }
+
+  @media screen and (max-width: 1024px) {
+    .form .form_front {
+     padding: 45px 100px;
+   }
+ }
+ @media screen and (max-width: 875px) {
+   .form .form_front {
+     padding: 30px;
+   }
+   .input {
+     min-width: 500px;
+   }
+   .input-icon {
+     left: 450px;
+   }
+ }
+ @media screen and (max-width: 600px) {
+   .input {
+     min-width: 350px;
+   }
+   .input-icon {
+     left: 300px;
+   }
+ }
+ @media screen and (max-width: 468px) {
+   .input {
+     min-width: 250px;
+   }
+   .input-icon {
+     left: 200px;
+   }
+ }

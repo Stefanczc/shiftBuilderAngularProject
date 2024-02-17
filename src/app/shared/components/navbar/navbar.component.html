@@ -2,7 +2,7 @@
     <li><a><span (click)="navigateToHomepage()"><img src="../../assets/images/worker-miner-svgrepo-com.svg"
                     alt="logo-img"></span></a></li>
     <li><a (click)="navigateToMyShifts()">MY SHIFTS</a></li>
-    <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
+    <li><a (click)="navigateToAddShift()">NEW SHIFT</a></li>
     <li><a (click)="navigateToProfilePage()">PROFILE</a></li>
     <li><span>Hello, {{ (user$ | async)?.firstname | titlecase }} {{ (user$ | async)?.lastname | titlecase
             }} !</span></li>
@@ -17,7 +17,7 @@
     <ul class="navbar-list-mobile" *ngIf="showMobileMenu">
         <li><a><span (click)="navigateToHomepage(); toggleMobileMenu()">HOMEPAGE</span></a></li>
         <li><a (click)="navigateToMyShifts(); toggleMobileMenu()">MY SHIFTS</a></li>
-        <li><a (click)="navigateToAddShift(); toggleMobileMenu()">ADD SHIFT</a></li>
+        <li><a (click)="navigateToAddShift(); toggleMobileMenu()">NEW SHIFT</a></li>
         <li><a (click)="navigateToProfilePage(); toggleMobileMenu()">PROFILE</a></li>
         <li><a (click)="logout(); toggleMobileMenu()">LOG OUT</a></li>
         <li><a (click)="toggleMobileMenu()">CLOSE</a></li>
@@ -29,7 +29,7 @@
                     alt="logo-img"></span></a></li>
     <li><a (click)="navigateToAllShifts()">SHIFTS</a></li>
     <li><a (click)="navigateToAllWorkers()">WORKERS</a></li>
-    <li><a (click)="navigateToAddShift()">ADD SHIFT</a></li>
+    <li><a (click)="navigateToAddShift()">NEW SHIFT</a></li>
     <li class=" "><span>Hello, {{ (user$ | async)?.firstname | titlecase }} !</span>
     </li>
     <li><a (click)="logout()">LOG OUT</a></li>
@@ -43,7 +43,7 @@
     <ul class="navbar-list-mobile" *ngIf="showMobileMenu">
         <li><a (click)="navigateToAllShifts(); toggleMobileMenu()">SHIFTS</a></li>
         <li><a (click)="navigateToAllWorkers(); toggleMobileMenu()">WORKERS</a></li>
-        <li><a (click)="navigateToAddShift(); toggleMobileMenu()">ADD SHIFT</a></li>
+        <li><a (click)="navigateToAddShift(); toggleMobileMenu()">NEW SHIFT</a></li>
         <li><a (click)="logout(); toggleMobileMenu()">LOG OUT</a></li>
         <li><a (click)="toggleMobileMenu()">CLOSE</a></li>
     </ul>
