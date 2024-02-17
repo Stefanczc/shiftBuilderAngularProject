@@ -3,6 +3,7 @@ import { User } from '../../shared/interfaces/user.model';
 import { ShareDataService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'app-admin-all-workers',
@@ -15,7 +16,8 @@ export class AdminAllWorkersComponent implements OnInit {
 
   constructor(
     private shareDataService: ShareDataService,
-    private router: Router
+    private router: Router,
+    private loadingService: LoadingService
   ) { 
     this.shareDataService.users$.subscribe(users => {
       this.users = users;
@@ -35,6 +37,7 @@ export class AdminAllWorkersComponent implements OnInit {
   }
 
   navigateToAdminHomepage() {
+    this.loadingService.showForDuration(1000);
     this.router.navigate([`/${ROUTE_ADMIN_HOMEPAGE}`]);
   }
   navigateToEditUser(uid: string) {

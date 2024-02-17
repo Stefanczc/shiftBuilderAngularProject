@@ -93,15 +93,16 @@ export class MyShiftsComponent implements OnInit {
     this.searchShifts();
   }
 
-  removeShift(shift: Shift ) {
-    this.shiftService.deleteShift(shift.shiftId);
+  removeShift(shift: Shift) {
     this.loadingService.showForDuration(1000);
+    this.shiftService.deleteShift(shift.shiftId);
     this.modalService.openModal('Success', 'The Shift was successfully deleted!', 'success');
   }
   navigateToEditShift(shiftId: string) {
     this.router.navigate(['/shift', shiftId]);
   }
   navigateToHomepage() {
+    this.loadingService.showForDuration(1000);
     const currentUrl = this.location.path();
     const isAdminPage = currentUrl.includes('my-shifts') && currentUrl.split('/').length > 2;
     const targetRoute = isAdminPage ? ROUTE_ADMIN_HOMEPAGE : ROUTE_HOMEPAGE;

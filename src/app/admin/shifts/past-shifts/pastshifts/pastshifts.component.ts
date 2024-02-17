@@ -50,10 +50,13 @@ export class PastshiftsComponent implements OnInit {
   
   filterPastShifts(shifts: Shift[]): Shift[] {
     const today = new Date();
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(today.getDate() - 7);
+    const lastSunday = new Date(today);
+    lastSunday.setDate(today.getDate() - (today.getDay() + 7) % 7);
+
+    const lastMonday = new Date(lastSunday);
+    lastMonday.setDate(lastSunday.getDate() - 7); 
     
-    return shifts.filter((shift) => new Date(shift.shiftDate) >= sevenDaysAgo && new Date(shift.shiftDate) <= today);
+    return shifts.filter((shift) => new Date(shift.shiftDate) >= lastMonday && new Date(shift.shiftDate) <= lastSunday);
   }
 
 }

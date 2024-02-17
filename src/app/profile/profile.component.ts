@@ -59,6 +59,7 @@ export class ProfileComponent implements OnInit {
 
   async updateProfile() {
     if (this.profileForm.valid) {
+      this.loadingService.showForDuration(2000);
       const updatedUserData = this.profileForm.value;
       const userId = this.user.uid;
 
@@ -88,7 +89,6 @@ export class ProfileComponent implements OnInit {
   
         this.user = updatedData;
         this.sharedDataService.setUserData(updatedData);
-        this.loadingService.showForDuration(2000);
         this.modalService.openModal('Success', 'Profile updated successfully!', 'success');
       } catch (error) {
         console.error('Error updating profile:', error);
@@ -126,6 +126,7 @@ export class ProfileComponent implements OnInit {
   }
   
   navigateToHomepage(): void {
+    this.loadingService.showForDuration(1000);
     this.router.navigate([`/${ROUTE_HOMEPAGE}`]);
   }
 

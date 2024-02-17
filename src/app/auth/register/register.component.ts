@@ -43,6 +43,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
+    this.loadingService.showForDuration(2000);
     const email = this.registerForm.get('email')?.value;
     const password = this.registerForm.get('password')?.value;
     const birthdate = this.registerForm.get('birthdate')?.value;
@@ -59,14 +60,13 @@ export class RegisterComponent implements OnInit {
           firstname,
           lastname,
         });
-        this.loadingService.showForDuration(2000);
+        
         this.modalService.openModal('Success', 'Congratulations, feel free to login and enjoy E-shift!', 'success');
         this.router.navigate([`/${ROUTE_LOGIN}`]);
         this.registerForm.reset();
       })
       .catch(error => {
         if (error.code === AuthErrorCodes.EMAIL_EXISTS) {
-          this.loadingService.showForDuration(2000);
           this.modalService.openModal('Error', 'E-mail is already in use', 'danger');
         } else {
           this.modalService.openModal('Error', 'Make sure there are no errors on the registration form', 'danger');

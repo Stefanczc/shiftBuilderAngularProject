@@ -3,18 +3,19 @@
 </button>
 
 <h1>All Shifts</h1>
-
-<div class="search-container">
-    <input type="search" class="input" placeholder="Shifts..." [(ngModel)]="searchShiftInput">
-    <input type="search" class="input" placeholder="Workers..." [(ngModel)]="searchWorkerInput">
-    <label for="startDate">Start Date: <input type="date" class="input" [(ngModel)]="startDate"></label>
-    <label for="endDate">End Date: <input type="date" class="input" [(ngModel)]="endDate"></label>
-    <button (click)="searchShifts()">
-        <span class="box">Search</span>
-    </button>
-    <button (click)="clearSearchInputs()">
-        <span class="box">Clear</span>
-    </button>
+<div class="search-wrapper">
+    <div class="search-container">
+        <input type="search" class="input" placeholder="Shifts..." [(ngModel)]="searchShiftInput">
+        <input type="search" class="input" placeholder="Workers..." [(ngModel)]="searchWorkerInput">
+        <label for="startDate">Start Date: <input type="date" class="input" [(ngModel)]="startDate"></label>
+        <label for="endDate">End Date: <input type="date" class="input" [(ngModel)]="endDate"></label>
+        <button (click)="searchShifts()">
+            <span class="box">Search</span>
+        </button>
+        <button (click)="clearSearchInputs()">
+            <span class="box">Clear</span>
+        </button>
+    </div>
 </div>
 
 <div class="main-container">

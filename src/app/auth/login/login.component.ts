@@ -50,9 +50,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
+      this.loadingService.showForDuration(2000);
       this.authService.loginUser(this.loginForm)
         .then(() => {
-          this.loadingService.showForDuration(2000);
           this.modalService.openModal('Success', 'Welcome to E-shift!', 'success');
         })
         .catch(error => {

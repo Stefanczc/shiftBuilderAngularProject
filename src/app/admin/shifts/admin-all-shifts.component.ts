@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
 import { ShareDataService } from '../../shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'app-admin-all-shifts',
@@ -23,7 +24,8 @@ export class AdminAllShiftsComponent implements OnInit {
     private shiftService: ShiftService,
     private router: Router,
     private shareDataService: ShareDataService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private loadingService: LoadingService
   ) { }
   
   ngOnInit(): void {
@@ -70,6 +72,7 @@ export class AdminAllShiftsComponent implements OnInit {
   
   async removeShift(shift: Shift) {
     try {
+      this.loadingService.showForDuration(1000);
       await this.shiftService.deleteShift(shift.shiftId);
       this.modalService.openModal('Success', 'The Shift was successfully deleted!', 'success');
     } catch (error) {
@@ -79,6 +82,7 @@ export class AdminAllShiftsComponent implements OnInit {
   }
 
   navigateToAdminHomepage() {
+    this.loadingService.showForDuration(1000);
     this.router.navigate([`/${ROUTE_ADMIN_HOMEPAGE}`]);
   }
   navigateToEditShift(shiftId: string) {

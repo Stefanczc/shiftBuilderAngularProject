@@ -3,7 +3,7 @@
         <input type="checkbox" id="signup_toggle">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
             <div class="form_front">
-                <p class="form_details">Registration</p>
+                <p class="form_details form_register">Registration</p>
                 <input type="text" formControlName="email" required placeholder="Email" class="input">
                 <span class="error-color"
                     *ngIf="registerForm.get('email')?.hasError('invalidEmail') && registerForm.get('email')?.touched">
@@ -43,7 +43,8 @@
                     *ngIf="registerForm.get('lastname')?.hasError('minlength') && registerForm.get('lastname')?.touched">
                     You need at least 2 characters
                 </span>
-                <input type="date" formControlName="birthdate" class="input" placeholder="test">
+                <input type="text" formControlName="birthdate" class="input custom-date" placeholder="Date of birth"
+                    onfocus="(this.type='date')" onblur="(this.type='text')">
                 <span class="error-color" *ngIf="registerForm.get('birthdate')?.hasError('invalidAgeRange')">
                     You need to be between 6 and 130 years old.
                 </span>

@@ -59,6 +59,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([`/${ROUTE_PROFILE}`]);
   }
   navigateToHomepage() {
+    this.loadingService.showForDuration(1000);
     this.router.navigate([`/${ROUTE_HOMEPAGE}`]);
   }
   navigateToAllShifts() {
@@ -68,6 +69,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([`/${ROUTE_ADMIN_ALLWORKERS}`]);
   }
   navigateToAdminHomepage() {
+    this.loadingService.showForDuration(1000);
     this.router.navigate([`/${ROUTE_ADMIN_HOMEPAGE}`]);
   }
   

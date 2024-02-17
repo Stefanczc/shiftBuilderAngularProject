@@ -2,7 +2,7 @@
     <div class="container">
         <form [formGroup]="loginForm" *ngIf="!showForgotPasswordForm" (ngSubmit)="onSubmit()" class="form">
             <div class="form_front">
-                <div class="form_details">Login</div>
+                <div class="form_details login_title">Login</div>
                 <input type="text" formControlName="email" placeholder="E-mail" class="input">
                 <span class="error-color"
                     *ngIf="loginForm.get('email')?.hasError('invalidEmail') && loginForm.get('email')?.touched">
