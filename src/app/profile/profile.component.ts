@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ShareDataService } from '../shared/services/share-data.service';
+import { ShareDataService } from '../shared/services/user.service';
 import { ROUTE_HOMEPAGE, ROUTE_LOGIN } from '../app-routing.module';
 import { collection, doc, updateDoc } from 'firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';

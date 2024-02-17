@@ -5,7 +5,7 @@ import { AuthService } from '../shared/services/authentication.service';
 import { take } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router'; 
 import { ROUTE_ADMIN_HOMEPAGE, ROUTE_HOMEPAGE } from '../app-routing.module';
-import { ShareDataService } from '../shared/services/share-data.service';
+import { ShareDataService } from '../shared/services/user.service';
 import { Location } from '@angular/common';
 import { ModalService } from '../shared/services/modal.service';
 import { LoadingService } from '../shared/services/loading.service';

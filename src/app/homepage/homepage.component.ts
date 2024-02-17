@@ -3,7 +3,7 @@ import { Shift } from '../shared/interfaces/shift.model';
 import { ShiftService } from '../shared/services/shift.service';
 import { AuthService } from '../shared/services/authentication.service';
 import { Router } from '@angular/router';
-import { ShareDataService } from '../shared/services/share-data.service';
+import { ShareDataService } from '../shared/services/user.service';
 import { ROUTE_LOGIN, ROUTE_MYSHIFTS, ROUTE_PROFILE, ROUTE_SHIFTS } from '../app-routing.module';
 import { filter } from 'rxjs';
 import { LoadingService } from '../shared/services/loading.service';

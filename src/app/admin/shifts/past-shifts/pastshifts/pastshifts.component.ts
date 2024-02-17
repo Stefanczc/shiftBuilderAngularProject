@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Shift } from 'src/app/shared/interfaces/shift.model';
 import { User } from 'src/app/shared/interfaces/user.model';
 import { AuthService } from 'src/app/shared/services/authentication.service';
-import { ShareDataService } from 'src/app/shared/services/share-data.service';
+import { ShareDataService } from 'src/app/shared/services/user.service';
 import { ShiftService } from 'src/app/shared/services/shift.service';
 
 @Component({

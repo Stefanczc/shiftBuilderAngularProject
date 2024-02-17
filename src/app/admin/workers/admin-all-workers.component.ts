@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/interfaces/user.model';
-import { ShareDataService } from '../../shared/services/share-data.service';
+import { ShareDataService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
 

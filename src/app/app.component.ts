@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from './shared/services/authentication.service';
 import { BehaviorSubject, take } from 'rxjs';
 import { ShiftService } from './shared/services/shift.service';
-import { ShareDataService } from './shared/services/share-data.service';
+import { ShareDataService } from './shared/services/user.service';
 
 @Component({
   selector: 'app-root',

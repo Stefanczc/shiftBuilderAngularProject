@@ -3,7 +3,7 @@ import { Firestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/authentication.service';
 import { emailValidator, passwordValidator } from '../../shared/validators/validators';
-import { ShareDataService } from '../../shared/services/share-data.service';
+import { ShareDataService } from '../../shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { LoadingService } from 'src/app/shared/services/loading.service';
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    const loginFormData = this.sharedDataService.getLoginFormData();
+    const loginFormData = this.authService.getLoginFormData();
     this.authService.isLoggedIn$.subscribe((status) => {
       this.isLoggedIn = status;
     });

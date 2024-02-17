@@ -8,8 +8,7 @@ import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
   providedIn: 'root'
 })
 export class ShareDataService {
-  private loginFormData: any;
-
+  
   private _userData = new BehaviorSubject<any>({});
   userData$ = this._userData.asObservable();
 
@@ -17,16 +16,6 @@ export class ShareDataService {
   users$ = this.usersSubject.asObservable();
   
   constructor(private firestore: Firestore) { }
-
-  //move to auth service
-
-  setLoginFormData(data: any) {
-    this.loginFormData = data;
-  }
-
-  getLoginFormData() {
-    return this.loginFormData;
-  }
 
   setUserData(data: any) {
     this._userData.next(data);
@@ -40,8 +29,6 @@ export class ShareDataService {
   get userData() {
     return this.userData$;
   }
-
-  /// until here
 
   async getAllUsers(): Promise<User[]> {
     const usersCollection = collection(this.firestore, 'users');

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, Event } from '@angular/router';
 import { ROUTE_ADMIN_ALLSHIFTS, ROUTE_ADMIN_ALLWORKERS, ROUTE_ADMIN_HOMEPAGE, ROUTE_HOMEPAGE, ROUTE_LOGIN, ROUTE_MYSHIFTS, ROUTE_PROFILE, ROUTE_SHIFTS } from '../../../app-routing.module';
 import { AuthService } from '../../services/authentication.service';
-import { ShareDataService } from '../../services/share-data.service';
+import { ShareDataService } from '../../services/user.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { LoadingService } from '../../services/loading.service';

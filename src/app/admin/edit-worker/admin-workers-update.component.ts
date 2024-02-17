@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../shared/interfaces/user.model';
 import { birthdateValidator, emailValidator, passwordValidator } from '../../shared/validators/validators';
-import { ShareDataService } from '../../shared/services/share-data.service';
+import { ShareDataService } from '../../shared/services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ROUTE_ADMIN_ALLWORKERS, ROUTE_LOGIN, ROUTE_MYSHIFTS } from '../../app-routing.module';
 import { collection } from 'firebase/firestore';

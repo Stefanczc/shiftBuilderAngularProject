@@ -1,6 +1,6 @@
 import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { ShareDataService } from '../services/share-data.service';
+import { ShareDataService } from '../services/user.service';
 import { ROUTE_MYSHIFTS } from 'src/app/app-routing.module';
 import { AuthService } from '../services/authentication.service';
 

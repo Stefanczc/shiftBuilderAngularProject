@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 import { Firestore } from "@angular/fire/firestore";
 import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 import { BehaviorSubject, Subject } from "rxjs";
-import { ShareDataService } from "./share-data.service";
+import { ShareDataService } from "./user.service";
 import { NavigationEnd, Router } from "@angular/router";
 import { ROUTE_ADMIN_HOMEPAGE, ROUTE_HOMEPAGE, ROUTE_LOGIN } from "src/app/app-routing.module";
 import { ModalService } from "./modal.service";
@@ -14,6 +14,8 @@ import { ModalService } from "./modal.service";
 })
 export class AuthService {
 
+  private loginFormData: any;
+
   isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
@@ -22,6 +24,14 @@ export class AuthService {
 
   private uidReadySubject = new Subject<void>();
   uidReady$ = this.uidReadySubject.asObservable();
+
+  getLoginFormData() {
+    return this.loginFormData;
+  }
+
+  setLoginFormData(data: any) {
+    this.loginFormData = data;
+  }
 
   constructor (
     private firestore: Firestore,

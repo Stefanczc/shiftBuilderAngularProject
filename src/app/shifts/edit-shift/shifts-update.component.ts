@@ -6,7 +6,7 @@ import { AuthService } from '../../shared/services/authentication.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ROUTE_ADMIN_ALLSHIFTS, ROUTE_MYSHIFTS } from '../../app-routing.module';
-import { ShareDataService } from '../../shared/services/share-data.service';
+import { ShareDataService } from '../../shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { LoadingService } from 'src/app/shared/services/loading.service';
 

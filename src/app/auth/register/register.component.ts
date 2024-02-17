@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../shared/services/authentication.service';
 import { AuthErrorCodes } from 'firebase/auth';
 import { Router } from '@angular/router';
-import { ShareDataService } from 'src/app/shared/services/share-data.service';
+import { ShareDataService } from 'src/app/shared/services/user.service';
 import { birthdateValidator, emailValidator, passwordMatchValidator, passwordValidator } from '../../shared/validators/validators';
 import { ROUTE_LOGIN } from 'src/app/app-routing.module';
 import { ModalService } from 'src/app/shared/services/modal.service';
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
 
     this.authService.registerUser(this.registerForm)
       .then(() => {
-        this.sharedDataService.setLoginFormData({ email, password });
+        this.authService.setLoginFormData({ email, password });
         this.sharedDataService.setUserData({
           email,
           password,

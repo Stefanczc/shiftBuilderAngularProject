@@ -10,7 +10,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthService } from './shared/services/authentication.service';
 import { HomepageComponent } from './homepage/homepage.component';
-import { ShareDataService } from './shared/services/share-data.service';
+import { ShareDataService } from './shared/services/user.service';
 import { ShiftsComponent } from './shifts/edit-shift/shifts-update.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MyShiftsComponent } from './shifts/my-shifts.component';

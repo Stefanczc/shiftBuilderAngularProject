@@ -3,7 +3,7 @@ import { ShiftService } from '../../shared/services/shift.service';
 import { Shift } from '../../shared/interfaces/shift.model';
 import { Router } from '@angular/router';
 import { ROUTE_ADMIN_HOMEPAGE } from '../../app-routing.module';
-import { ShareDataService } from '../../shared/services/share-data.service';
+import { ShareDataService } from '../../shared/services/user.service';
 import { ModalService } from 'src/app/shared/services/modal.service';
 
 @Component({
