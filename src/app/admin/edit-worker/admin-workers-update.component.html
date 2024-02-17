@@ -1,11 +1,13 @@
-<button (click)="navigateToAllWorkers()" class="homepage-btn">
-    <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to All Workers</span>
-</button>
+<div class="btn-wrapper">
+    <button (click)="navigateToAllWorkers()" class="homepage-btn">
+        <span class="box"><img src="../../assets/images/back-svgrepo-com.svg" alt="back-img"> Back to All Workers</span>
+    </button>
 
-<button *ngIf="user" (click)="navigateToMyShifts()" class="user-profile-shifts">
-    <span class="box">go to {{ user.firstname | titlecase }}'s shifts <img
-            src="../../../assets/images/arrow-go-forward-svgrepo-com.svg" alt="back-img"></span>
-</button>
+    <button *ngIf="user" (click)="navigateToMyShifts()" class="user-profile-shifts">
+        <span class="box">go to {{ user.firstname | titlecase }}'s shifts <img
+                src="../../../assets/images/arrow-go-forward-svgrepo-com.svg" alt="back-img"></span>
+    </button>
+</div>
 
 <div class="container">
     <form [formGroup]="workerForm" (submit)="updateWorker()" class="form">
