@@ -58,10 +58,10 @@ export class LoginComponent implements OnInit {
         .catch(error => {
           const errorMessage = error.message;
           if (errorMessage.includes('auth/invalid-credential')) {
-            this.modalService.openModal('Error', 'Your account is not in our database', 'error');
+            this.modalService.openModal('Error', 'Incorrect email/password!', 'error');
           }
           else if (errorMessage.includes('User is disabled')) {
-            this.modalService.openModal('Error', 'Your account has been disabled, please contact the support team', 'error');
+            this.modalService.openModal('Error', 'Your account has been disabled, please contact the support team!', 'error');
           }
           else {
             this.modalService.openModal('Error', 'Please refresh the page and try again', 'error');
