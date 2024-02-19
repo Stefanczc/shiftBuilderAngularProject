@@ -29,12 +29,12 @@ export class RegisterComponent implements OnInit {
     private loadingService: LoadingService
   ) {
     this.registerForm = this.fb.group({
-      email: ['new@email.ro', [Validators.required, emailValidator()]],
-      password: ['abc123$', [Validators.required, Validators.minLength(6), passwordValidator()]],
-      passwordConfirm: ['abc123$', Validators.required],
-      firstname: ['test', [Validators.required, Validators.minLength(2)]],
-      lastname: ['new', [Validators.required, Validators.minLength(2)]],
-      birthdate: ['1990-05-05', [Validators.required, birthdateValidator()]],
+      email: ['', [Validators.required, emailValidator()]],
+      password: ['', [Validators.required, Validators.minLength(6), passwordValidator()]],
+      passwordConfirm: ['', Validators.required],
+      firstname: ['', [Validators.required, Validators.minLength(2)]],
+      lastname: ['', [Validators.required, Validators.minLength(2)]],
+      birthdate: ['', [Validators.required, birthdateValidator()]],
     }, {
       validators: passwordMatchValidator('password', 'passwordConfirm')
     });
