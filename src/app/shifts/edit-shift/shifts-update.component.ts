@@ -32,12 +32,12 @@ export class ShiftsComponent implements OnInit {
     private loadingService: LoadingService
   ) {
     this.shiftForm = this.fb.group({
-      shiftDate: ['2024-02-10', Validators.required],
-      shiftStartTime: ['09:00', Validators.required],
-      shiftEndTime: ['17:00', Validators.required],
-      shiftPrice: ['15', Validators.required],
-      shiftPlace: ['San Marino', Validators.required],
-      shiftComment: ['test'],
+      shiftDate: ['', Validators.required],
+      shiftStartTime: ['', Validators.required],
+      shiftEndTime: ['', Validators.required],
+      shiftPrice: ['', Validators.required],
+      shiftPlace: ['', Validators.required],
+      shiftComment: [''],
       shiftId: [undefined],
       isVisible: true,
     });

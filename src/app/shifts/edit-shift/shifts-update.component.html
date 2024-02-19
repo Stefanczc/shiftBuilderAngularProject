@@ -7,15 +7,15 @@
     <form [formGroup]="shiftForm" (ngSubmit)="onSubmit()" class="form">
         <div class="form_front">
             <p class="form_details">Shift details</p>
-            <label>Shift Date</label>
+            <label>Shift Date*</label>
             <input type="date" formControlName="shiftDate" class="input">
-            <label>Shift Start Time</label>
+            <label>Shift Start Time*</label>
             <input type="time" formControlName="shiftStartTime" class="input">
-            <label>Shift End Time</label>
+            <label>Shift End Time*</label>
             <input type="time" formControlName="shiftEndTime" class="input">
-            <label>Price per hour</label>
+            <label>Price per hour*</label>
             <input type="number" formControlName="shiftPrice" class="input">
-            <label>Shift Place</label>
+            <label>Shift Place*</label>
             <select formControlName="shiftPlace" name="Workplace" class="input">
                 <option value="Oslo">Oslo</option>
                 <option value="San Francisco">San Francisco</option>
